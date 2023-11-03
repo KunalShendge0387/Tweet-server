@@ -1,14 +1,14 @@
 {
     "builds": [
         {
-            "src": "elon.py",
+            "src": "api/elon.py",
             "use": "@vercel/python"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "elon.py"
+            "dest": "api/elon.py"
         }
     ]
 }
