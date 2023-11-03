@@ -71,6 +71,11 @@ def get_sentiment_analysis(twitter_handle, tweets_desired):
         }
 
     return sentiment_data
+    
+@app.route("/")
+def hello_world():
+    return "Hello World!"
+
 
 @app.route('/senti', methods=['POST'])
 def sentiment_analysis():
