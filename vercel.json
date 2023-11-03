@@ -1,0 +1,14 @@
+{
+    "builds": [
+        {
+            "src": "Sentiment/elon.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "Sentiment/elon.py"
+        }
+    ]
+}
