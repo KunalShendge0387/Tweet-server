@@ -7,6 +7,11 @@ import json
 
 app = Flask(__name__)
 
+# Entry point for Vercel
+def vercel_handler(request):
+    # Handle the request and return a response
+    return app(request.environ, request.start_response)
+    
 def classify_sentiment(sentiment_scores, threshold=0.2):
     if sentiment_scores['roberta_pos'] - sentiment_scores['roberta_neg'] > threshold:
         return 'Positive'
@@ -71,7 +76,7 @@ def get_sentiment_analysis(twitter_handle, tweets_desired):
         }
 
     return sentiment_data
-    
+
 @app.route("/")
 def hello_world():
     return "Hello World!"
